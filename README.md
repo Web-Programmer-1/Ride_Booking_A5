@@ -65,31 +65,34 @@ Vercel dep
 
 ###  Auth
 - `POST` https://ride-booking-api.vercel.app/api/v1/user/register - `Register user`
-- `POST /api/v1/user/login` - Login & get token
-- `GET /api/v1/user/me` - Get profile info
+- `POST` https://ride-booking-api.vercel.app/api/v1/user/login - Login & get token
+- `GET` https://ride-booking-api.vercel.app/api/v1/user/me - Get profile info
 
 ###  Rider
-- `POST /api/v1/ride/request` - Request ride
-- `PATCH /api/v1/ride/cancel/:id` - Cancel ride
-- `GET /api/v1/ride/history` - Get ride history
+- `POST` https://ride-booking-api.vercel.app/api/v1/ride/request - Request ride
+- `PATCH `  https://ride-booking-api.vercel.app/api/v1/ride/cancel/:id - Cancel ride
+- `GET ` https://ride-booking-api.vercel.app/api/v1/ride/history - Get ride history
 
 ###  Driver
-- `PATCH /api/v1/ride/accept/:id` - Accept ride
-- `PATCH /api/v1/ride/status/:id` - Update ride status
-- `GET /api/v1/ride/earnings` - Get total earnings
-- `PATCH /api/v1/driver/availability` - Toggle availability
+- `PATCH`  https://ride-booking-api.vercel.app/api/v1/ride/accept/:id - Accept ride
+- `PATCH`  https://ride-booking-api.vercel.app/api/v1/ride/status/:id - Update ride status
+- `GET`    https://ride-booking-api.vercel.app/api/v1/ride/earnings - Get total earnings
+- `PATCH ` https://ride-booking-api.vercel.app/api/v1/ride/availability - Toggle availability
+
+
+
 
 ###  Admin
-- `GET /api/v1/admin/users` - Get all users
-- `PATCH /api/v1/admin/drivers/approve/:id` - Approve/suspend driver
-- `PATCH /api/v1/admin/users/block/:id` - Block/unblock user
-- `GET /api/v1/admin/rides` - Get all ride records
+- `GET`  https://ride-booking-api.vercel.app/api/v1/ride/users - Get all users
+- `PATCH`  https://ride-booking-api.vercel.app/api/v1/ride/drivers/approve/:id - Approve/suspend driver (toggle) one click suspand one click approve
+- `PATCH`  https://ride-booking-api.vercel.app/api/v1/ride/users/block/:id - Block/unblock user
+- `GET`   https://ride-booking-api.vercel.app/api/v1/ride/rides  - Get all ride records
 
 ---
 
 ##  Testing
 
-You can test all routes using **Postman** or **Thunder Client**.  
+You can test all routes using **Postman**   
  Don't forget to include `Authorization` header with JWT token for protected routes.
 
 ---
