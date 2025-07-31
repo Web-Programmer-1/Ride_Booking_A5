@@ -56,8 +56,15 @@ The API supports secure authentication, role-based authorization, and full ride 
 
 ## 🛠 API Endpoints Summary
 
+
+
+Vercel dep
+
+
+
+
 ###  Auth
-- `POST /api/v1/user/register` - Register user
+- `POST` https://ride-booking-api.vercel.app/api/v1/user/register - `Register user`
 - `POST /api/v1/user/login` - Login & get token
 - `GET /api/v1/user/me` - Get profile info
 
