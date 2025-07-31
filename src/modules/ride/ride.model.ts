@@ -13,6 +13,11 @@ const rideSchema = new Schema<IRide>({
         ref:"User",
         
     },
+    pickupLocation: {
+        type:String,
+        // required:true,
+    },
+
     destination: {
         type:String,
         required:true,

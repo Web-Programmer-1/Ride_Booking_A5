@@ -23,6 +23,14 @@ const userSchema = new Schema<IUser>({
         enum:['admin', 'rider', 'driver'],
         required:true
     },
+    isAvailable: {
+        type:Boolean,
+        default:false
+    },
+    approved:{
+        type:Boolean,
+        default:false,
+    }
 }, {
     versionKey:false,
     timestamps:true

@@ -7,5 +7,7 @@ export interface IUser {
     email:string,
     password:string,
     role:userRole,
-    isBlocked:boolean
+    isBlocked:boolean,
+    isAvailable:boolean,
+    approved:boolean,
 }

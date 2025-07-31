@@ -9,7 +9,9 @@ const DB = process.env.DATABASE_URL!;
 let server:Server;
 const bootstrap = async () => {
     try {
-        await mongoose.connect(DB);
+        await mongoose.connect(DB , {
+            dbName:"Ride-Booking"
+        });
         console.log("Connceted Mongoose Server");
         server=app.listen(port, () => {
             console.log(`Server is running on the PORT:${port}`)

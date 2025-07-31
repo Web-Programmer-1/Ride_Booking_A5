@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import { config} from 'dotenv';
 import userRouter from './modules/user/user.route';
 import rideRouter from './modules/ride/ride.route';
+import { globalErrorHandler } from './middlewares/globalErrorHandler';
 config();
 
 const app = express();
@@ -19,6 +20,8 @@ app.use("/api/v1/user", userRouter);
 // User Router Middlewares
 app.use("/api/v1/ride", rideRouter);
 
+app.use(globalErrorHandler);
+
 
 
 
@@ -28,3 +31,4 @@ app.get("/", (req, res) => {
 });
 
 export default app;
+export const handler = app; 
