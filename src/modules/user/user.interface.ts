@@ -8,6 +8,9 @@ export interface IUser {
     password:string,
     role:userRole,
     isBlocked:boolean,
+    phone?:number,
     isAvailable:boolean,
     approved:boolean,
+    emergencyContact?: string; 
+     vehicle: string;
 }

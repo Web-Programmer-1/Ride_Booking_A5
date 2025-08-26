@@ -13,4 +13,7 @@ export interface IRide {
     requestedAt?:Date,
     cancelledAt?:Date,
     completedAt?:Date,
+    vehicle:string,
+    phone:string,
+    
 }

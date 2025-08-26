@@ -31,13 +31,13 @@ export const validateRequest = (schema: ZodTypeAny) => {
     const result = schema.safeParse(req.body);
 
     if (!result.success) {
-      // ✅ Fix: use Type Assertion
+      
       const zodError = result.error as ZodError;
 
       return res.status(400).json({
         success: false,
         message: 'Validation failed',
-        errors: zodError, // ✅ Fully type-safe now
+        errors: zodError, 
       });
     }
 

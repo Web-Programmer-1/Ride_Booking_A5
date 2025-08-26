@@ -17,6 +17,13 @@ const rideSchema = new Schema<IRide>({
         type:String,
         // required:true,
     },
+    vehicle: {
+        type:String
+    },
+    phone:{
+        type:String
+    },
+
 
     destination: {
         type:String,
@@ -32,7 +39,8 @@ const rideSchema = new Schema<IRide>({
     requestedAt: { type: Date, default: Date.now },
     cancelledAt: { type: Date },
     completedAt: { type: Date },
-
+    
+    
 
 }, {
     timestamps:true,
