@@ -60,10 +60,19 @@ const userSchema = new mongoose_1.Schema({
         type: Boolean,
         default: false
     },
+    phone: {
+        type: String,
+        default: "",
+    },
+    vehicle: {
+        type: String,
+        default: ""
+    },
     approved: {
         type: Boolean,
         default: false,
-    }
+    },
+    emergencyContact: { type: String, default: null }
 }, {
     versionKey: false,
     timestamps: true

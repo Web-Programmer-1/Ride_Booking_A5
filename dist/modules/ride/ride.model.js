@@ -49,6 +49,12 @@ const rideSchema = new mongoose_1.Schema({
         type: String,
         // required:true,
     },
+    vehicle: {
+        type: String
+    },
+    phone: {
+        type: String
+    },
     destination: {
         type: String,
         required: true,

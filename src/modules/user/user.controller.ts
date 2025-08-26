@@ -120,8 +120,8 @@ export const login = async (req: Request, res: Response) => {
      const FIFTY_DAYS_MS = 50 * 24 * 60 * 60 * 1000; 
     res.cookie("access-token", token, {
       httpOnly: true,
-      secure: isProd,          
-        sameSite: isProd ? "none" : "lax",      
+      secure: true,          
+        sameSite: "none",      
            
       path: "/",
       maxAge:FIFTY_DAYS_MS, 

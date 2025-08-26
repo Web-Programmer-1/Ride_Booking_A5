@@ -13,16 +13,34 @@ const ride_route_1 = __importDefault(require("./modules/ride/ride.route"));
 const globalErrorHandler_1 = require("./middlewares/globalErrorHandler");
 (0, dotenv_1.config)();
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)());
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://batch-5-a2-ride-share-booking.vercel.app"
+];
+app.use((0, cors_1.default)({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        }
+        else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true,
+}));
+// app.set("trust proxy", 1);
+// app.use(cors({
+//   origin: [
+//     "http://localhost:5173",
+//     "https://batch-5-a2-ride-share-booking.vercel.app",
+//   ],
+//   credentials: true, 
+// }));
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
-// User Router Middlewares 
 app.use("/api/v1/user", user_route_1.default);
-// User Router Middlewares
 app.use("/api/v1/ride", ride_route_1.default);
 app.use(globalErrorHandler_1.globalErrorHandler);
-app.get("/", (req, res) => {
-    res.send("Ride Api is Working");
-});
+app.get("/", (_req, res) => res.send("Ride Api is Working"));
 exports.default = app;
 exports.handler = app;
